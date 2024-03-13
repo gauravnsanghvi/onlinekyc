@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <form>
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.name" name="name" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Date of Birth</ion-label>
+      <ion-input type="date" [(ngModel)]="userData.dateOfBirth" name="dateOfBirth" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-textarea [(ngModel)]="userData.address" name="address" rows="3" required></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">PAN Card Number</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.panNumber" name="panNumber" required pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" maxlength="10"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Aadhar Card Number</ion-label>
+      <ion-input type="text" [(ngModel)]="userData.aadharNumber" name="aadharNumber" required pattern="[0-9]{12}" maxlength="12" (input)="separateAadhar($event)"></ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit">Submit</ion-button>
+  </form>
+</ion-content>
